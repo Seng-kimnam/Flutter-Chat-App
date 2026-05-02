@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/widgets/chat_bubble.dart';
+import 'package:flutter_project/widgets/chat_input.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -27,161 +29,21 @@ class ChatPage extends StatelessWidget {
                 icon: Icon(Icons.logout))
           ],
         ),
-        body: ListView(
+        body: Column(
           children: [
-            Container(
-                padding: EdgeInsets.all(10),
+            Expanded(
+              // fit: FlexFit.loose,
+              // flex: 3,
+              child: ListView.builder( itemCount: 6, itemBuilder: (context,index) {
 
-                margin: EdgeInsets.all(30),
-                decoration: BoxDecoration(
-                  // image: DecorationImage(image: NetworkImage("https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg")),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12) ,
-                        bottomLeft: Radius.circular(12),
-                        topRight: Radius.circular(12)
-                    ),
-                    color: Colors.grey
-                ),
-
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-
-                    Text("Hello Nham by nv o" , style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                    ),
-                    ),
-                    Image.network(
-                      "https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg" ,
-                      height: 100,
-                    ),
-
-                    // Drawer(backgroundColor: Colors.blueGrey,)
-                  ],
-
-                )
+                return ChatBubble(
+                    no: index+1,
+                    alignment: (index+1)%2 == 0 ? Alignment.centerRight : Alignment.centerLeft,
+                    message : "Hello hi bye"
+                );
+              }),
             ),
-            Container(
-                padding: EdgeInsets.all(10),
-
-                margin: EdgeInsets.all(30),
-                decoration: BoxDecoration(
-                  // image: DecorationImage(image: NetworkImage("https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg")),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12) ,
-                        bottomLeft: Radius.circular(12),
-                        topRight: Radius.circular(12)
-                    ),
-                    color: Colors.grey
-                ),
-
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-
-                    Text("Hello Nham by nv o" , style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                    ),
-                    ),
-                    Image.network(
-                      "https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg" ,
-                      height: 100,
-                    ),
-
-                    // Drawer(backgroundColor: Colors.blueGrey,)
-                  ],
-
-                )
-            ),
-            Container(
-                padding: EdgeInsets.all(10),
-
-                margin: EdgeInsets.all(30),
-                decoration: BoxDecoration(
-                  // image: DecorationImage(image: NetworkImage("https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg")),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12) ,
-                        bottomLeft: Radius.circular(12),
-                        topRight: Radius.circular(12)
-                    ),
-                    color: Colors.grey
-                ),
-
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-
-                    Text("Hello Nham by nv o" , style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                    ),
-                    ),
-                    Image.network(
-                      "https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg" ,
-                      height: 100,
-                    ),
-
-                    // Drawer(backgroundColor: Colors.blueGrey,)
-                  ],
-
-                )
-            ),
-            Container(
-                padding: EdgeInsets.all(10),
-
-                margin: EdgeInsets.all(30),
-                decoration: BoxDecoration(
-                  // image: DecorationImage(image: NetworkImage("https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg")),
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(12) ,
-                        bottomLeft: Radius.circular(12),
-                        topRight: Radius.circular(12)
-                    ),
-                    color: Colors.grey
-                ),
-
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-
-                    Text("Hello Nham by nv o" , style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
-                    ),
-                    ),
-                    Image.network(
-                      "https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg" ,
-                      height: 100,
-                    ),
-
-                    // Drawer(backgroundColor: Colors.blueGrey,)
-                  ],
-
-                )
-            ),
-
-            Container(
-              height: 40,
-
-              decoration: BoxDecoration(
-                borderRadius:BorderRadius.vertical(top: Radius.circular(10)) ,
-                color: Colors.blueGrey
-              ),
-              child: Row(
-                children: [
-                  IconButton(onPressed: () {
-
-                  }, icon: Icon(Icons.add , color: Colors.white,) ),
-                  IconButton(onPressed: () {
-
-                  }, icon: Icon(Icons.send , color: Colors.white,) )
-                ],
-              ),
-            )
-
-
+            ChatInput()
 
           ],
         )
