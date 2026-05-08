@@ -1,0 +1,97 @@
+[
+    {
+      "id": 1,
+      "text": "Hello everyone!",
+      "createdAt": 1715078400000,
+      "author": {
+
+        "userName": "John"
+      }
+    },
+    {
+      "id": 2,
+      "text": "Check out this beautiful place.",
+      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWD-UW15lYL3Wv1DJxkUqxVqDhZ5khGl4UUQ&s",
+      "createdAt": 1715078460000,
+      "author": {
+
+        "userName": "Emma"
+      }
+    },
+    {
+      "id": 3,
+      "text": "How are you doing today?",
+      "createdAt": 1715078520000,
+      "author": {
+
+        "userName": "David"
+      }
+    },
+    {
+      "id": 4,
+      "text": "I just finished my Flutter project.",
+      "imageUrl": "https://picsum.photos/201",
+      "createdAt": 1715078580000,
+      "author": {
+
+        "userName": "Sophia"
+      }
+    },
+    {
+      "id": 5,
+      "text": "Let's meet tomorrow morning.",
+      "createdAt": 1715078640000,
+      "author": {
+        
+        "userName": "Michael"
+      }
+    },
+    {
+      "id": 6,
+      "text": "This image looks amazing!",
+      "imageUrl": "https://picsum.photos/202",
+      "createdAt": 1715078700000,
+      "author": {
+        
+        "userName": "Olivia"
+      }
+    },
+    {
+      "id": 7,
+      "text": "Did you complete the assignment?",
+      "createdAt": 1715078760000,
+      "author": {
+      
+        "userName": "James"
+      }
+    },
+    {
+      "id": 8,
+      "text": "Here is my latest design.",
+      "imageUrl": "https://picsum.photos/203",
+      "createdAt": 1715078820000,
+      "author": {
+       
+        "userName": "Liam"
+      }
+    },
+    {
+      "id": 9,
+      "text": "Good luck for your interview!",
+      "createdAt": 1715078880000,
+      "author": {
+       
+        "userName": "Charlotte"
+      }
+    },
+    {
+       "id" :  10,
+      "text": "Vacation memories.",
+      "imageUrl": "https://picsum.photos/204",
+      "createdAt": 1715078940000,
+      "author": {
+        
+        "userName": "Noah"
+      }
+    }
+  ]

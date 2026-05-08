@@ -1,19 +1,29 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_project/models/chat_message_entity.dart';
 
 class ChatBubble  extends StatelessWidget {
+  final ChatMessageEntity entity;
   final Alignment alignment;
-  final String message;
+
   final int no;
   // parameterize constructor
-  const ChatBubble({super.key ,required this.alignment ,required this.message , required this.no}) ;
+  const ChatBubble({super.key ,
+    required this.alignment ,
+    required this.no ,
+    required this.entity
+  }) ;
 
   @override
   Widget build(BuildContext context) {
+    // String {username } = entity.author;
     return Align(
       alignment: alignment,
       child: Container(
+        // media query like css in web
+        constraints: BoxConstraints(maxWidth:MediaQuery.of(context).size.width * 0.5 ),
+        // width: ,
           padding: EdgeInsets.all(10),
           margin: EdgeInsets.all(30),
           decoration: BoxDecoration(
@@ -23,23 +33,30 @@ class ChatBubble  extends StatelessWidget {
                   bottomLeft: Radius.circular(12),
                   topRight: Radius.circular(12)
               ),
-              color: Colors.grey
+              color: Colors.grey.shade400
           ),
 
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text("$no"),
-              Text("$message" , style: TextStyle(
+              // Text("${entity.id}"),
+              Text(entity.text , style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold
               ),
               ),
-              Image.network(
-                "https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg" ,
+              if(entity.imageUrl != null )
+                Image.network(
+                  '${entity.imageUrl}',
                 height: 100,
+                  // width: 100,
+                ),
+              Text("sent by ${entity.author.userName} at ${entity.createdAt}", style: (
+              TextStyle(
+                fontSize: 12
+              )
               ),
-
+              )
               // Drawer(backgroundColor: Colors.blueGrey,)
             ],
 
