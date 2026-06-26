@@ -9,7 +9,7 @@ import 'package:social_media_buttons/social_media_button.dart';
 
 
 class LoginPage extends StatelessWidget{
-  LoginPage({Key? key}) : super(key:key);
+  LoginPage({super.key});
 
   final usernameTxtEditingController = TextEditingController();
   final passwordTxtEditingController = TextEditingController();
@@ -31,7 +31,7 @@ class LoginPage extends StatelessWidget{
       theme: ThemeData(
         useMaterial3: true,
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           backgroundColor: Colors.green,
           foregroundColor: Colors.white,
           elevation: 4,
@@ -39,10 +39,10 @@ class LoginPage extends StatelessWidget{
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Flutter Chat App"),
+          title: const Text("Flutter Chat App"),
 
         ),
-        drawer: Drawer(),
+        drawer: const Drawer(),
         // floatingActionButton: FloatingActionButton(onPressed: () {
         //   print("Button is clicking");
         // }),
@@ -52,8 +52,7 @@ class LoginPage extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            Center(
-
+           const  Center(
               child: Text("Let's sign you in!" , style: TextStyle(
             fontSize: 30,
             color: Colors.brown,
@@ -64,7 +63,7 @@ class LoginPage extends StatelessWidget{
               ),
               
             ),
-            Center(
+            const Center(
 
               child: Text("Welcome back! \n You've been missed!" , style: TextStyle(
                   fontWeight: FontWeight.bold,
@@ -79,11 +78,11 @@ class LoginPage extends StatelessWidget{
               width: 200,
               height: 150,
               // child: FlutterLogo(),
-              padding: EdgeInsets.all(50),
+              padding: const EdgeInsets.all(50),
               // margin: EdgeInsets.all(50),
               decoration: BoxDecoration(
                 
-                image: DecorationImage(
+                image: const DecorationImage(
                   // fit: BoxFit.cover,
                     image: AssetImage("assets/images/chat.jpg"),
 
@@ -95,7 +94,7 @@ class LoginPage extends StatelessWidget{
             ),
 
             Container(
-              margin: EdgeInsets.only(left: 40 , right: 40 ) ,
+              margin: const EdgeInsets.only(left: 40 , right: 40 ) ,
 
               // alignment: Alignment.,
               child: Column(
@@ -135,7 +134,7 @@ class LoginPage extends StatelessWidget{
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
 
@@ -144,7 +143,7 @@ class LoginPage extends StatelessWidget{
                   }, style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.green,
 
-                  ), child: Text("Login" , style: TextStyle(
+                  ), child: const Text("Login" , style: TextStyle(
                       color: Colors.white,
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
@@ -160,7 +159,7 @@ class LoginPage extends StatelessWidget{
                   //   throwMessage: "Error to Access this link",
                   //   url: ("https://bbu-ecommerce-ab6be.web.app"),
                   // ),
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
 
                     children: [

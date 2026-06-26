@@ -32,7 +32,7 @@ class LoginTextField extends StatelessWidget {
       obscureText: hasHidden,
       decoration: InputDecoration(
           hintText: hintText,
-          border : OutlineInputBorder(),
+          border : const OutlineInputBorder(),
           hintStyle: ThemeTextStyle.loginTextField
       ),
     );

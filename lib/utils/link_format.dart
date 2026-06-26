@@ -20,7 +20,6 @@ class LinkFormat extends StatelessWidget {
       onTap: () async {
 
             if(!await launchUrl(Uri.parse(addressUrl))){
-
                 throw (throwMessage);
             }
       },

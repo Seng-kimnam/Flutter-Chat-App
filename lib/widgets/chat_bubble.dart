@@ -7,11 +7,9 @@ class ChatBubble  extends StatelessWidget {
   final ChatMessageEntity entity;
   final Alignment alignment;
 
-  final int no;
   // parameterize constructor
   const ChatBubble({super.key ,
     required this.alignment ,
-    required this.no ,
     required this.entity
   }) ;
 
@@ -24,11 +22,11 @@ class ChatBubble  extends StatelessWidget {
         // media query like css in web
         constraints: BoxConstraints(maxWidth:MediaQuery.of(context).size.width * 0.5 ),
         // width: ,
-          padding: EdgeInsets.all(10),
-          margin: EdgeInsets.all(30),
+          padding: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(30),
           decoration: BoxDecoration(
             // image: DecorationImage(image: NetworkImage("https://thumbs.dreamstime.com/b/login-icon-button-vector-illustration-isolated-white-background-126999474.jpg")),
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(12) ,
                   bottomLeft: Radius.circular(12),
                   topRight: Radius.circular(12)
@@ -40,7 +38,7 @@ class ChatBubble  extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               // Text("${entity.id}"),
-              Text(entity.text , style: TextStyle(
+              Text(entity.text , style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold
               ),
@@ -52,9 +50,9 @@ class ChatBubble  extends StatelessWidget {
                   // width: 100,
                 ),
               Text("sent by ${entity.author.userName} at ${entity.createdAt}", style: (
-              TextStyle(
+              const TextStyle(
                 fontSize: 12
-              )
+               )
               ),
               )
               // Drawer(backgroundColor: Colors.blueGrey,)

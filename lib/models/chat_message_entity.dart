@@ -1,5 +1,4 @@
 
-
 class ChatMessageEntity {
 
   int id;
@@ -25,12 +24,11 @@ class ChatMessageEntity {
         author: Author.fromJson(json["author"])
     );
   }
-
 }
 
 class Author {
-  String userName;
 
+  String userName;
   Author({required this.userName});
 
   factory Author.fromJson(Map<String, dynamic> json){

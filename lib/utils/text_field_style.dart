@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 class ThemeTextStyle {
 
   static TextStyle loginTextField =  GoogleFonts.abel(
-    textStyle: TextStyle(color : Colors.brown) ,
+    textStyle: const TextStyle(color : Colors.brown) ,
     fontWeight: FontWeight.bold ,
   );
 
