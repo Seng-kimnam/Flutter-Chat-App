@@ -9,9 +9,7 @@ class PixelFordImage {
   @JsonKey(name: "url_full_size")
   String urlFullSize;
   @JsonKey(name: "url_small_size")
-
   String urlSmallSize;
-
   PixelFordImage({
     required this.id,
     required this.filename,

@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_project/models/chat_message_entity.dart';
+import 'package:flutter_project/repo/image_repository.dart';
+import 'package:flutter_project/widgets/picker_body.dart';
 
 class  ChatInput extends StatelessWidget {
   final Function(ChatMessageEntity) onSubmit;
@@ -11,16 +13,10 @@ class  ChatInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    // final ImageRepository _imageRepo = ImageRepository();
     final messageController = TextEditingController();
-    final random = Random(9999);
-     handleSubmit(){
-      final newChatMessage = ChatMessageEntity(id: random.nextInt(1000) ,
-          text: messageController.text,
-          createdAt: DateTime.now().millisecondsSinceEpoch,
-          author: Author(userName: "Emma")
-      );
-      onSubmit(newChatMessage);
-    }
+    // final random = Random(9999);
+
     return  Container(
       height: 60,
       // padding: Padding(padding: ),
@@ -32,10 +28,16 @@ class  ChatInput extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
 
-          IconButton(onPressed: () {},
+          IconButton(onPressed: () {
+            showModalBottomSheet(context: context,
+                builder:(BuildContext context){
+                  return NetworkImagePickerBody();
+                });
+          },
               icon: const Icon(Icons.add ,
-                color: Colors.white)
+                color: Colors.white,)
           ),
+
           Expanded(
               child: TextField(
                 keyboardType: TextInputType.multiline,
@@ -55,11 +57,12 @@ class  ChatInput extends StatelessWidget {
                 ),
               )
           ),
-
-          IconButton(onPressed: handleSubmit,
+          IconButton(onPressed: () {},
               icon: const Icon(Icons.send ,
-                color: Colors.white,)
-          )
+                  color: Colors.white)
+          ),
+
+
         ],
       ),
     );

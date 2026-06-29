@@ -1,9 +1,11 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_project/models/chat_message_entity.dart';
 import 'package:flutter_project/models/pixel_ford_image.dart';
+import 'package:flutter_project/repo/image_repository.dart';
 import 'package:flutter_project/widgets/chat_bubble.dart';
 import 'package:flutter_project/widgets/chat_input.dart';
 import 'package:http/http.dart' as http;
@@ -22,7 +24,7 @@ class _ChatPage extends State<ChatPage> {
   String textFromLocalRestAPI = "";
   List<ChatMessageEntity> stateMessages = [];
   List<PixelFordImage> imageList = [];
-
+  final ImageRepository _imgeRepo = ImageRepository();
   Future<void> _loadInitialMessage() async {
     final response =
         await rootBundle.loadString("assets/object/static_message.json");
@@ -57,29 +59,13 @@ class _ChatPage extends State<ChatPage> {
   //     textFromLocalRestAPI = responsefromRestAPI.body;
   //   });
   // }
-  Future<void> _networkImageList() async {
 
-    Uri myApi = Uri.parse("https://pixelford.com/api2/image");
-    final res = await http.get(myApi);
-
-    final List<dynamic> decodedList = jsonDecode(res.body) as List;
-
-    final List<PixelFordImage> pixelFordImageList = decodedList.map((item) {
-      return PixelFordImage.fromJson(item as Map<String, dynamic>);
-    }).toList();
-
-    if (!mounted) return;
-
-    setState(() {
-      imageList = pixelFordImageList;
-    });
-  }
 
   @override
   void initState() {
     super.initState();
     _loadInitialMessage();
-    _networkImageList();
+    _imgeRepo.getNetworkImageList();
     // _loadFromLocalAPI();
   }
 
@@ -110,6 +96,7 @@ class _ChatPage extends State<ChatPage> {
         ),
         body: Column(
           children: [
+
             if (imageList.isNotEmpty)
               SizedBox(
                 height: 130,
